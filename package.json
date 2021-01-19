@@ -9,7 +9,7 @@
         "index.js",
         "build"
     ],
-    "repository": "ken-dingxj/babel-plugin-root-import-optimization",
+    "repository": "ken-ding/babel-plugin-root-import-optimization",
     "scripts": {
         "test": "npm run test-babel6; npm run test-babel7",
         "test-babel6": "mocha test/*.spec.js --require babel-core/register --require config/mocha.js",
