@@ -23,7 +23,11 @@ export const transformRelativeToRootPath = (
     const root = typeof _root === 'function' ? _root(sourceFile) : _root;
     const absolutePath = path.resolve(root, `${suffix}/${withoutRootPathPrefix}`);
 
-    let sourcePath = sourceFile.substring(0, sourceFile.lastIndexOf('/'));
+    if(sourceFile.indexOf('/')==-1){
+        let sourcePath = sourceFile.substring(0, sourceFile.lastIndexOf('\\'));
+    }else{
+        let sourcePath = sourceFile.substring(0, sourceFile.lastIndexOf('/'));
+    }
 
     let relativePath = path.relative(path.resolve(sourcePath), absolutePath).replace(/\\/g, '/');
 
